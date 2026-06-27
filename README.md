@@ -64,7 +64,7 @@ Distill is **post-hoc** by design. You watch the way you normally do, then proce
 ## Tech
 
 - Obsidian plugin (TypeScript)
-- [Fabric](https://github.com/danielmiessler/fabric) patterns for the AI layer, used natively with the blessing of Fabric's creator
+- [Fabric](https://github.com/danielmiessler/fabric) patterns for the AI layer
 - Cloud LLMs or a local Ollama
 - Transcript fetch from the platform's caption track
 
@@ -80,4 +80,4 @@ Distill is free and open source under the MIT license. If it saves you time, you
 
 ## Credits
 
-Built by [CarbeneAI](https://carbene.ai). AI extraction powered by [Fabric](https://github.com/danielmiessler/fabric) (Daniel Miessler). MIT licensed.
+Built by [CarbeneAI](https://carbene.ai). AI extraction powered by [Fabric](https://github.com/danielmiessler/fabric). MIT licensed.
