@@ -41,7 +41,7 @@ The part nobody else does: **it turns the exact moments you flag into Anki flash
 
 Distill is **post-hoc** by design. You watch the way you normally do, then process when you are ready. No live AI talking over your video.
 
-1. Capture a video into your vault (bookmarklet, or paste a link)
+1. Capture a video into your vault ([bookmarklet](https://carbene.ai/distill/install.html), or paste a link)
 2. Watch, take notes, drop timestamps
 3. Hit **Process**: Distill pulls the transcript, runs your Fabric patterns, and writes it back into the note, timestamp-anchored
 4. Optionally push highlights to Anki and link entities into your graph
@@ -78,7 +78,9 @@ Your API key is stored in this vault's local `data.json` and is sent only to the
 
 ## Install
 
-Coming soon. This is in active development. Star the repo to follow along; it will land in the Obsidian Community Plugins browser once v1 ships.
+**Quick capture works today:** install the [Save to Obsidian bookmarklet](https://carbene.ai/distill/install.html) to send any YouTube video into your vault in one click, even before the plugin ships.
+
+The plugin is in active development. Star the repo to follow along; it will land in the Obsidian Community Plugins browser once v1 ships.
 
 ## Support
 
