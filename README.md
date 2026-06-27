@@ -7,84 +7,48 @@
 ![Distill](assets/distill-banner.png)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-06b6d4.svg)](LICENSE)
-[![Status: in development](https://img.shields.io/badge/status-in%20development-f59e0b.svg)](#roadmap)
 [![Obsidian](https://img.shields.io/badge/Obsidian-plugin-8b5cf6.svg?logo=obsidian&logoColor=white)](https://obsidian.md)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-carbeneai-ffdd00.svg?logo=buymeacoffee&logoColor=black)](https://www.buymeacoffee.com/carbeneai)
 
-An Obsidian plugin that watches a video with you, then distills it into a summary, extracted wisdom, timestamp-linked notes, and ready-to-review flashcards. All inside your vault.
+A faster, cleaner way to save and study YouTube videos in Obsidian. Think of it as MediaNote, rebuilt: one-click capture, a genuinely resizable player, click-to-seek timestamps, and AI notes, all in your vault.
 
-## Why Distill
+## What it does today
 
-Most "AI summarize my YouTube" tools dump a wall of text and call it done. Distill is a different thing: a knowledge refinery. Raw video in, refined and *connected* knowledge out, built for the place your knowledge already lives.
+**One-click capture.** Install the [bookmarklet](https://carbene.ai/distill/install.html) and save any YouTube video to your vault as a clean note: a clean URL that always starts at 0:00 (no more resume-timestamp), the real video title as the filename (no junk index, no illegal characters), and tidy properties (channel, video id, source).
 
-The part nobody else does: **it turns the exact moments you flag into Anki flashcards and linked notes.** Watch a language video, mark the phrases you want, and Distill builds review cards from those timestamps. Go down a rabbit hole, and the people, claims, and ideas become linked notes in your graph.
+**A real player.** Open the video in a resizable, pop-out pane. Drag it as large as you like, or move it into its own window onto a second monitor. The tiny fixed embed is gone.
 
-## What it does
+**Click-to-seek timestamps.** Tap a hotkey to drop a timestamp while you watch; click it later and the player jumps to that exact second.
 
-**1. A real media workstation**
-- Resizable, pop-out player (no more tiny fixed embed)
-- Playback speed and A‑B loop to replay a segment (great for language learning)
-- Keyboard timestamps that drop a clickable marker; click to jump back to that exact second
-- Frame screenshots straight into your note
+**AI notes, powered by [Fabric](https://github.com/danielmiessler/fabric).** `summarize` and `extract_wisdom`, appended to the note automatically.
 
-**2. Timestamp-aware AI (powered by Fabric)**
-- One **Process** button runs Fabric patterns (`summarize`, `extract_wisdom`, and more) on the transcript
-- Every insight is anchored to a timestamp, one click from the source
-- Run it on the whole video, or just the moments you flagged
+## A note on transcripts (the honest part)
 
-**3. An output loop**
-- Generate **Anki flashcards** from your timestamped highlights
-- Auto-link people, concepts, and claims into atomic `[[notes]]` so every video enriches your graph
-- Bring your own brain: cloud models, or a local Ollama for anything sensitive
+YouTube has locked down direct caption access, so a pure in-plugin transcript fetch isn't reliable yet. Today the AI summaries run best through a companion transcript workflow (for example a `yt-dlp`-based job) or your own transcript. A portable transcript path is the number-one roadmap item. Until then, capture, the player, and timestamps work for everyone, and the AI works wherever a transcript is available.
 
-## How it works
+## Install
 
-Distill is **post-hoc** by design. You watch the way you normally do, then process when you are ready. No live AI talking over your video.
-
-1. Capture a video into your vault ([bookmarklet](https://carbene.ai/distill/install.html), or paste a link)
-2. Watch, take notes, drop timestamps
-3. Hit **Process**: Distill pulls the transcript, runs your Fabric patterns, and writes it back into the note, timestamp-anchored
-4. Optionally push highlights to Anki and link entities into your graph
+- **Bookmarklet (capture):** drag-to-install at **[carbene.ai/distill/install.html](https://carbene.ai/distill/install.html)**.
+- **Plugin (player + timestamps):** manual for now. Copy the build into `.obsidian/plugins/distill/`. A Community Plugins listing comes once it's polished.
 
 ## Roadmap
 
-**v1 (MVP)**
-- [ ] Media player: resize, pop-out, speed, A‑B loop, click-to-seek timestamps, frame screenshots
-- [ ] Process button: `summarize` + `extract_wisdom`, timestamp-anchored
-- [ ] Anki flashcards from timestamps
-- [ ] Clean note titles, and clean URLs that always start at 0:00
-- [ ] Bookmarklet to capture a video into your vault
+We will flesh this out later. The short version:
 
-**v1.1 and beyond**
-- [ ] Graph auto-linking (entities / concepts / claims become atomic notes)
-- [ ] More sources: podcasts, local recordings, articles
-- [ ] Ask-the-source chat (retrieval over the transcript)
-- [ ] Cross-video synthesis
+- Portable transcripts, so the AI works anywhere, on any device
+- Anki flashcards generated from your timestamps
+- Graph-linking: people and concepts become atomic `[[notes]]`
+- More sources: podcasts, articles, local files
 
 ## Tech
 
 - Obsidian plugin (TypeScript)
 - [Fabric](https://github.com/danielmiessler/fabric) patterns for the AI layer
 - Cloud LLMs or a local Ollama
-- Transcript fetch from the platform's caption track
-
-## Privacy & network
-
-Distill runs locally in Obsidian. It makes network requests only to:
-- **youtube.com** — to fetch the video's caption transcript
-- **your chosen AI provider** — `api.anthropic.com`, `api.openai.com`, or your local Ollama URL
-
-Your API key is stored in this vault's local `data.json` and is sent only to the provider you select, never anywhere else. If your vault syncs to the cloud, prefer the local **Ollama** provider so no key leaves your machine. (`data.json` is gitignored.)
-
-## Install
-
-**Quick capture works today:** install the [Save to Obsidian bookmarklet](https://carbene.ai/distill/install.html) to send any YouTube video into your vault in one click, even before the plugin ships.
-
-The plugin is in active development. Star the repo to follow along; it will land in the Obsidian Community Plugins browser once v1 ships.
 
 ## Support
 
-Distill is free and open source under the MIT license. If it saves you time, you can fuel the build:
+Free and open source under the MIT license. If it saves you time, you can fuel the build:
 
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-carbeneai-ffdd00.svg?logo=buymeacoffee&logoColor=black)](https://www.buymeacoffee.com/carbeneai)
 
