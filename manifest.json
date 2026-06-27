@@ -1,0 +1,11 @@
+{
+  "id": "distill",
+  "name": "Distill",
+  "version": "0.0.1",
+  "minAppVersion": "1.4.0",
+  "description": "Turn any video into knowledge. Timestamp-aware AI that distills videos into summaries, wisdom, linked notes, and Anki flashcards.",
+  "author": "CarbeneAI",
+  "authorUrl": "https://carbene.ai",
+  "fundingUrl": "https://www.buymeacoffee.com/carbeneai",
+  "isDesktopOnly": false
+}

@@ -68,6 +68,14 @@ Distill is **post-hoc** by design. You watch the way you normally do, then proce
 - Cloud LLMs or a local Ollama
 - Transcript fetch from the platform's caption track
 
+## Privacy & network
+
+Distill runs locally in Obsidian. It makes network requests only to:
+- **youtube.com** — to fetch the video's caption transcript
+- **your chosen AI provider** — `api.anthropic.com`, `api.openai.com`, or your local Ollama URL
+
+Your API key is stored in this vault's local `data.json` and is sent only to the provider you select, never anywhere else. If your vault syncs to the cloud, prefer the local **Ollama** provider so no key leaves your machine. (`data.json` is gitignored.)
+
 ## Install
 
 Coming soon. This is in active development. Star the repo to follow along; it will land in the Obsidian Community Plugins browser once v1 ships.
